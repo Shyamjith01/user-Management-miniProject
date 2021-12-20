@@ -1,0 +1,67 @@
+<body>
+  <a href="/adduser"><button type="button" class="btn btn-primary mb-4">Add User</button></a>
+	<table class="table" id="userTable">
+  <thead>
+    <tr>
+      
+      <th scope="col">name</th>
+      <th scope="col">email</th>
+      <th scope="col">mobile</th>
+      <th scope="col">options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+
+      {{#each users}}
+    <tr>
+      
+      <td>{{this.name}}</td>
+      <td>{{this.email}}</td>
+      <td>{{this.mobile}}</td>
+      <td><a href="/edit-user/{{this._id}}"><span class="material-icons">edit</span></a><a href="/user-delete/{{this._id}}"><span class="material-icons">delete</span></a></td>
+      
+    </tr>
+
+    {{/each}}
+    
+  </tbody>
+</table>
+
+
+<div class="logoutbtn" >
+  <a href="/admin-logout"><button type="button" class="btn btn-primary btn-lg mt-4">Logout</button></a>
+</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+  
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+
+
+</body>
+<script>
+  $(document).ready( function () {
+    console.log('datatable')
+    $('#userTable').DataTable();
+} );
+</script>
